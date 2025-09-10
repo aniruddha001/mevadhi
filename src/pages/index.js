@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Headers from "../components/Header"
 import Footer from "@/components/Footer";
-import Content from "@/components/Content";
+import Blogcontent from "@/components/Blogcontent";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Headers />
-      <Content />
+      <Blogcontent />
       <Footer />
     </>
   );
