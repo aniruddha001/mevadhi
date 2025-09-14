@@ -26,7 +26,7 @@ const Pagecontent = () => {
         fetchMenus();
     }, []);
 
-    if (loading) return <p>Loading menus...</p>;
+    if (loading) return <p>Loading Pages...</p>;
     if (error) return <p>Error: {error}</p>;
     return (
         <>
