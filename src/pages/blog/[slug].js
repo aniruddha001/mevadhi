@@ -30,7 +30,7 @@ const fetchBlogPost = async (slug) => {
     const response = await fetch(`${WORDPRESS_API_BASE}/posts?slug=${slug}&_embed`);
 
     if (!response.ok) {
-        throw new Error(`Failed to fetch blog post: ${response.status}`);
+        throw new Error(`Failed to fetch blog post\: ${response.status}`);
     }
 
     const data = await response.json();
