@@ -100,7 +100,7 @@ const BlogPost = () => {
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="text-center">
                 <h1 className="text-2xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-                <p className="text-gray-600 mb-4">The blog post you're looking for doesn't exist.</p>
+                <p className="text-gray-600 mb-4">The blog post you are looking for doesnt exist.</p>
                 <button
                     onClick={() => router.push('/')}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition-colors"
