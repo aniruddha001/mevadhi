@@ -135,3 +135,13 @@ body {
   background-color: #f9fafb;
   font-weight: 600;
 }
+
+/* In globals.css or a Tailwind plugin */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
