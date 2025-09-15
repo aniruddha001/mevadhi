@@ -5,8 +5,8 @@ const Desktopmenu = () => {
 
     const { data: menus, loading, error } = useFetch('/api/menus', 'menus');
 
-    if (loading) return <p>Loading menus...</p>;
-    if (error) return <p>Error: {error}</p>;
+    // if (loading) return <p>Loading menus...</p>;
+    // if (error) return <p>Error: {error}</p>;
 
     return (
         <>
