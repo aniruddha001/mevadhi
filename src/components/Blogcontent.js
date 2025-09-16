@@ -32,10 +32,18 @@ const Content = ({ category }) => {
                                 <img
                                     src={blog._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder.png'}
                                     alt={blog.title.rendered}
-                                    className="w-full h-40 object-cover"
+                                    className="w-full h-48 object-cover"
                                 />
                             </a>
-                            <div className="p-4">
+                            <div className="px-4 py-4">
+                                <div className="flex items-center space-x-2">
+                                    <span className="text-gray-500">
+                                        {blog.date.split("T")[0]}
+                                    </span>
+                                    <span className="inline-flex items-center rounded-md bg-indigo-100 px-2 py-0.5 text-xs font-medium text-indigo-700">
+                                        {blog._embedded?.['wp:term']?.[0][0]?.name || '/placeholder.png'}
+                                    </span>
+                                </div>
                                 <h3 className="text-lg font-semibold mb-2">
                                     <a href={`/blog/${blog.slug}`} className="inline-block text-sm text-blue-600">
                                         {blog.title.rendered}
