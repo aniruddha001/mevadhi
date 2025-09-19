@@ -1,5 +1,6 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch'
+import Link from 'next/link';
 
 const Desktopmenu = () => {
 
@@ -45,13 +46,13 @@ const Desktopmenu = () => {
                                         {/* Dropdown Menu */}
                                         <div className="absolute left-0 mt-2 w-48 bg-gray-900 rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 z-10">
                                             {childItems.map(child => (
-                                                <a
+                                                <Link
                                                     key={child.id}
                                                     href={child.url}
                                                     className="block px-4 py-2 hover:bg-blue-800"
                                                 >
                                                     {child.title}
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     </div>
@@ -60,9 +61,9 @@ const Desktopmenu = () => {
 
                             // Normal menu link
                             return (
-                                <a key={item.id} href={'/' + item.title.toLowerCase().replace(/\s+/g, '-')} className="hover:text-gray-200">
+                                <Link key={item.id} href={'/' + item.title.toLowerCase().replace(/\s+/g, '-')} className="hover:text-gray-200">
                                     {item.title}
-                                </a>
+                                </Link>
                             );
                         });
                     }

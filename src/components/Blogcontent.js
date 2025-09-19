@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useFetch from '../hooks/useFetch';
+import Link from 'next/link';
 
 const Content = ({ category }) => {
     const apiUrl = category ? `/api/blogs?categories=${category}` : `/api/blogs`;
@@ -28,13 +29,13 @@ const Content = ({ category }) => {
                 <section className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentPosts.map((blog) => (
                         <div key={blog.id} className="bg-white rounded shadow overflow-hidden">
-                            <a href={`/blog/${blog.slug}`} className="inline-block text-sm text-blue-600">
+                            <Link href={`/blog/${blog.slug}`} className="inline-block text-sm text-blue-600">
                                 <img
                                     src={blog._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder.png'}
                                     alt={blog.title.rendered}
                                     className="w-full h-48 object-cover"
                                 />
-                            </a>
+                            </Link>
                             <div className="px-4 py-4">
                                 <div className="flex items-center space-x-2">
                                     <span className="text-gray-500">
@@ -52,9 +53,9 @@ const Content = ({ category }) => {
                                 <p className="text-sm text-gray-600 mb-4">
                                     {getTextSnippet(blog.content.rendered, 10)}
                                 </p>
-                                <a href={`/blog/${blog.slug}`} className="inline-block text-sm text-blue-600">
+                                <Link href={`/blog/${blog.slug}`} className="inline-block text-sm text-blue-600">
                                     Read more →
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
